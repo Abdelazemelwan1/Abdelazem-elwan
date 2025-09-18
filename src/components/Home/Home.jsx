@@ -193,7 +193,7 @@ export default function Home() {
 
         {/* FOOTER */}
         <footer className="py-8 text-center text-gray-400">
-          <div className="text-sm">© {new Date().getFullYear()} {t("reserved")}</div>
+          <div className="text-[13px]">© {new Date().getFullYear()} {t("reserved")}</div>
           <div className="text-xs mt-2">{t("foot")}</div>
         </footer>
 

@@ -74,14 +74,14 @@ const dummyProjects = [
   },
   {
     title: "TEC APP",
-    description: "   React Ecommerce Website small  ecommerce web with React 19 ,Tailwind CSS , TanStak Query, with a pagination for portability between API components to ensure clean architecture and fast performance And switch between dark mood and light mood",
+    description: "React Ecommerce Website small  ecommerce web with React ,Tailwind , TanStak Query, with a pagination for portability between API components to ensure clean architecture and fast performance And switch between dark mood and light mood",
     tech: ["React", "TailwindCSS", "Swiper" ,"TanStackQuery", "Axios",  "Formik & Yup",   ],
     link: "https://small-e-commerc-web-master.vercel.app/",
     image: pro4,
     category: "React.js",
   },
   {
-    title: "كــــــــرم الشــــــــام Karam EL-Sham",
+    title: "كـــــرم الشـــــام Karam EL-Sham",
     description: "Karam El Shaa Restaurant project built with React and TailwindCSS for a modern responsive design, using JSON Server with Axios for dynamic data fetching, and enhancing the UI with AOS animations and Swiper for interactive menus.",
     tech: ["React", "TailwindCSS",   "Swiper" ,  "react-router-dom", "JSON Server", "AOS" ],
     link: "https://karan-elsham.vercel.app/",
@@ -174,7 +174,7 @@ const dummyProjects = [
   },
   {
     title: "EliteCorp",
-    description: "A website built with HTML, CSS, and Bootstrap, showcasing office designs and a variety of electronics, along with highlighting the people behind these products and services. It features a clean, well-structured layout, and is fully responsive to provide a smooth experience across all devices and screen sizes.",
+    description: "A website built with HTML, CSS, and Bootstrap, showcasing office designs and a variety of electronics, along with highlighting the people behind these products and services. It features a clean, well-structured layout, and is fully responsive to provide a smooth experience across all devices .",
     tech: ["Html", "CSS" , "Bootstrap"],
     link: "https://abdelazemelwan1.github.io/EliteCorp/",
     image: ht11,
