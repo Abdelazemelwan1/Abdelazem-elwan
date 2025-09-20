@@ -74,7 +74,7 @@ const dummyProjects = [
   },
   {
     title: "TEC APP",
-    description: "React Ecommerce Website small  ecommerce web with React ,Tailwind , TanStak Query, with a pagination for portability between API components to ensure clean architecture and fast performance And switch between dark mood and light mood",
+    description: "React Ecommerce Website with React ,Tailwind , TanStak Query, with a pagination between API components to ensure clean architecture And switch between dark mood and light mood",
     tech: ["React", "TailwindCSS", "Swiper" ,"TanStackQuery", "Axios",  "Formik & Yup",   ],
     link: "https://small-e-commerc-web-master.vercel.app/",
     image: pro4,
@@ -82,7 +82,7 @@ const dummyProjects = [
   },
   {
     title: "كـــــرم الشـــــام Karam EL-Sham",
-    description: "Karam El Shaa Restaurant project built with React and TailwindCSS for a modern responsive design, using JSON Server with Axios for dynamic data fetching, and enhancing the UI with AOS animations and Swiper for interactive menus.",
+    description: "Karam El Shaa Restaurant project built with React and Tailwind for a responsive design, using JSON Server with Axios for data fetching, and enhancing the UI with AOS animations and Swiper.",
     tech: ["React", "TailwindCSS",   "Swiper" ,  "react-router-dom", "JSON Server", "AOS" ],
     link: "https://karan-elsham.vercel.app/",
     image: pro5,
@@ -391,7 +391,7 @@ function ProjectSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center mb-20 w-full"
       >
-        <h2 className="text-[28px] xs:4xl md:text-5xl  font-bold font-moderniz w-full">
+        <h2 className="text-[27px] xs:4xl md:text-5xl  font-bold font-moderniz w-full">
             <span className='text-start max-w-full' style={{ color: "#fff" }}><LineShadowText shadowColor="#bbbbbb">{t('SHOWCASE')}</LineShadowText></span>
             {' '}
             <span className='text-start max-w-full' style={{color: "#00ffdc"}}><LineShadowText shadowColor="#00b3a4">{t('PORTFOLIO')}</LineShadowText></span>

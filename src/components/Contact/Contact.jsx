@@ -236,7 +236,7 @@ useEffect(() => {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white text-start">{t("call")}</h3>
-                    <p className="text-slate-400">{t("message")}</p>
+                    <p className="text-slate-400 text-start ">{t("message")}</p>
                   </div>
                 </div>
                 {/* اتصـــل بــــي  Contact Me <== form   ال */}
