@@ -152,7 +152,7 @@ export default function Home() {
                 "{t('shall')}"
               </div>
               <div className="flex flex-row sm:flex-row gap-4 mt-8 justify-center md:justify-start items-center">
-                <ButtonMovingBorder as="a" href="/Abdelazem Elwan _ Front End Developer (React.js).pdf"  download duration={3000} borderRadius="0.75rem" className="bg-slate-900/[0.8] border border-slate-800 text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_24px_8px_#40ffaa]" target="_blank">
+                <ButtonMovingBorder as="a" href="https://drive.google.com/file/d/1izMRneqkDedXi1Ln670RHTl_ShWk7BWt/view?usp=sharing"  download duration={3000} borderRadius="0.75rem" className="bg-slate-900/[0.8] border border-slate-800 text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_24px_8px_#40ffaa]" target="_blank">
                   <FaDownload /> {t('cv')}
                 </ButtonMovingBorder>
                 <ButtonMovingBorder as="a" href="#projects" duration={3000} borderRadius="0.75rem" className="bg-slate-900/[0.8] border border-slate-800 text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_24px_8px_#40ffaa]">
@@ -193,7 +193,7 @@ export default function Home() {
 
         {/* FOOTER */}
         <footer className="py-8 text-center text-gray-400">
-          <div className="text-[13px]">© {new Date().getFullYear()} {t("reserved")}</div>
+          <div className="text-[12px] md:text-[14px]">© {new Date().getFullYear()} {t("reserved")}</div>
           <div className="text-xs mt-2">{t("foot")}</div>
         </footer>
 
