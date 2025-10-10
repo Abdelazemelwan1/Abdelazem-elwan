@@ -3,13 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import Style from "./ProjectSection.module.css"
 import { motion, AnimatePresence } from "framer-motion";
-import { FaExternalLinkAlt, FaReact, FaNodeJs, FaHtml5, FaCss3Alt,  FaJsSquare, FaTools, FaFigma, FaGithub, FaTimes, FaDownload, FaBootstrap, FaSass, FaFire } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaReact, FaNodeJs, FaHtml5, FaCss3Alt,  FaJsSquare, FaTools, FaFigma, FaGithub, FaTimes, FaDownload, FaBootstrap, FaSass, FaFire, FaGithubAlt } from 'react-icons/fa';
 import { SiTailwindcss, SiVercel, SiExpress, SiTypescript, SiJquery,  SiRedux, SiReactquery,  SiReactrouter, SiSwiper, SiReacthookform } from 'react-icons/si';
 import { PiCodeBold } from "react-icons/pi";
 import { LiaLayerGroupSolid } from "react-icons/lia";
 import { useNavbar } from './../../contexts/NavbarContext';
 import { IoLogoFirebase, IoLogoHtml5, IoLogoJavascript } from "react-icons/io5";
 import { TbBrandRedux } from "react-icons/tb";
+import { IoLogoGithub } from "react-icons/io5";
 
 
 // image React
@@ -49,18 +50,20 @@ import { MdModelTraining } from 'react-icons/md';
 const dummyProjects = [
   // project React 6
   {
-    title: "E-Commerce API",
+    title: "E-Commerce Project",
     description: "React e-commerce site built a modern and responsive e-commerce using React, tailwindcss, TanStackQuery.... .",
     tech: ["React", "TailwindCSS", "TanStackQuery" , "React Hooks"  ,"Swiper", "JWT", "Formik & Yup" , "react-hot-toast" ],
     link: "https://e-commerc-app-ten.vercel.app/",
+    gitHub: "https://github.com/Abdelazemelwan1/e-commerc-app",
     image: pro1,
     category: "React.js",
   },
   {
-    title: "E-Commerce API",
+    title: "E-Commerce Project",
     description: "React E-commerce Website Built a modern and responsive e-Commerce web application that feature a complete shopping journey from product discovery to checkout. .",
     tech: ["React", "TailwindCSS", "Redux Toolkit", "React Hooks"  ,"Axios", "Formik & Yup" ,],
-    link: "https://e-commerc-app-ten.vercel.app/",
+    link: "https://e-commerce-app-web-master-3u3x.vercel.app/",
+    gitHub: "https://github.com/Abdelazemelwan1/E-commerceApp_WebMaster",
     image: pro2,
     category: "React.js",
   },
@@ -69,6 +72,7 @@ const dummyProjects = [
     description: "React Data Visualization Website Created a  modern and responsive web application for private clinic owners that features a complete registration journey from patient entry to discharge. ",
     tech: ["React", "TailwindCSS", "Firebase" ,"Material UI", "Lottie Animations" , ],
     link: "https://crud-web-master-bice.vercel.app/",
+    gitHub: "https://github.com/Abdelazemelwan1/CRUD_Web_Master",
     image: pro3,
     category: "React.js",
   },
@@ -77,14 +81,16 @@ const dummyProjects = [
     description: "React Ecommerce Website with React ,Tailwind , TanStak Query, with a pagination between API components to ensure clean architecture And switch between dark mood and light mood",
     tech: ["React", "TailwindCSS", "Swiper" ,"TanStackQuery", "Axios",  "Formik & Yup",   ],
     link: "https://small-e-commerc-web-master.vercel.app/",
+    gitHub: "https://github.com/Abdelazemelwan1/small-e-commerc-Web_Master",
     image: pro4,
     category: "React.js",
   },
   {
-    title: "كـــــرم الشـــــام Karam EL-Sham",
-    description: "Karam El Shaa Restaurant project built with React and Tailwind for a responsive design, using JSON Server with Axios for data fetching, and enhancing the UI with AOS animations and Swiper.",
+    title: "كـــرم الشـــام Karam EL-Sham",
+    description: "Karam El Shaa  project built with React and Tailwind for a responsive design, using JSON Server with Axios and enhancing the UI with AOS animations and Swiper.",
     tech: ["React", "TailwindCSS",   "Swiper" ,  "react-router-dom", "JSON Server", "AOS" ],
     link: "https://karan-elsham.vercel.app/",
+    gitHub: "https://github.com/Abdelazemelwan1/Karan_Elsham",
     image: pro5,
     category: "React.js",
   },
@@ -93,16 +99,26 @@ const dummyProjects = [
     description: "React Routing & Typing Effect Project  Built with React, featuring routing for smooth navigation and a typing animation library that displays text character by character for an interactive feel.",
     tech: ["React", "react-router-dom", "react-typed" ,  ],
     link: "https://react-one-sigma-seven.vercel.app/",
+    gitHub: "https://github.com/Abdelazemelwan1/ReactOne",
     image: pro6,
     category: "React.js",
   },
 
 // project JavaScript 6
-  {
+    {
+    title: "Game Reviews",
+    description: "An interactive movie website  with HTML, CSS, Bootstrap, JavaScript, and API, featuring foreign films like action and cartoons in a responsive layout Users can view details for each movie or access a page to watch it directly.",
+    tech: ["JavaScript", "Bootstrap" ,"CSS" , "Html", "API" ,],
+    link: "https://abdelazemelwan1.github.io/-Game-Reviews/",
+    gitHub: "https://github.com/Abdelazemelwan1/-Game-Reviews",
+    image: js6,
+    category: "JavaScript",
+  },{
     title: "Yummy API",
     description: "An interactive food showcase built with HTML, Bootstrap, and JavaScript. Features regex-based search and a clean, responsive design for easy browsing.",
     tech: ["JavaScript", "Bootstrap" , "Api"  , "Html", "Regex"],
     link: "https://abdelazemelwan1.github.io/Yummy_API/",
+    gitHub: "https://github.com/Abdelazemelwan1/Yummy_API",
     image: js1,
     category: "JavaScript",
   },
@@ -111,6 +127,7 @@ const dummyProjects = [
     description: "A JavaScript weather app that fetches live data via API to display the current temperature and a 3-day forecast based on your location.",
     tech: ["JavaScript", "Bootstrap" ,  "Html", "Api",],
     link: "https://abdelazemelwan1.github.io/Weather/",
+    gitHub: "https://github.com/Abdelazemelwan1/Weather",
     image: js2,
     category: "JavaScript",
   },
@@ -119,6 +136,7 @@ const dummyProjects = [
     description: "A complete Login & Register system built with JavaScript. Includes regex-based validation for email and password, user authentication on login, and the ability to create new accounts with proper input validation.",
     tech: ["JavaScript", "Bootstrap" ,"Html", "Regex", ],
     link: "https://abdelazemelwan1.github.io/login/index.html",
+    gitHub: "https://github.com/Abdelazemelwan1/login",
     image: js3,
     category: "JavaScript",
   },
@@ -127,6 +145,7 @@ const dummyProjects = [
     description: "A JavaScript project that lets users add website links with titles, validates input to prevent duplicates, and displays clickable links for easy access.",
     tech: ["JavaScript", "Bootstrap" , "Html","Regex" ,],
     link: "https://abdelazemelwan1.github.io/Bookmarker/",
+    gitHub: "https://github.com/Abdelazemelwan1/Bookmarker",
     image: js4,
     category: "JavaScript",
   },
@@ -135,17 +154,11 @@ const dummyProjects = [
     description: "A full JavaScript CRUD system with image support, allowing users to create, edit, delete, and manage data seamlessly.",
     tech: ["JavaScript", "Bootstrap" , "Html","Regex" ,],
     link: "https://abdelazemelwan1.github.io/crud/",
+    gitHub: "https://github.com/Abdelazemelwan1/crud",
     image: js5,
     category: "JavaScript",
   },
-  {
-    title: "Game Reviews",
-    description: "An interactive movie website built with HTML, CSS, Bootstrap, JavaScript, and API, featuring foreign films like action and cartoons in a responsive layout Users can view details for each movie or access a page to watch it directly.",
-    tech: ["JavaScript", "Bootstrap" ,"CSS" , "Html", "API" ,],
-    link: "https://abdelazemelwan1.github.io/-Game-Reviews/",
-    image: js6,
-    category: "JavaScript",
-  },
+
 
   // project HTML & CSS & Bootstrap 12
   {
@@ -153,6 +166,7 @@ const dummyProjects = [
     description: "A responsive restaurant website built with HTML, CSS, and Bootstrap 5, showcasing chefs, dishes, and restaurant details. Includes a Dark/Light Mode for a modern and user-friendly experience.",
     tech: ["Html", "CSS" , "Bootstrap"],
     link: "https://abdelazemelwan1.github.io/mealify/",
+    gitHub: "https://github.com/Abdelazemelwan1/mealify",
     image: ht7,
     category: "Html & CSS & Bootstrap",
   },
@@ -161,6 +175,7 @@ const dummyProjects = [
     description: "An interactive personal website built with HTML, CSS, and Bootstrap, featuring a JavaScript typewriter effect to showcase info, skills, services, and social links in a fully responsive design.",
     tech: ["Html", "CSS" , "Bootstrap"],
     link: "https://abdelazemelwan1.github.io/Kerri/",
+    gitHub: "https://github.com/Abdelazemelwan1/Kerri",
     image: ht12,
     category: "Html & CSS & Bootstrap",
   },
@@ -169,14 +184,16 @@ const dummyProjects = [
     description: "A personal website built with HTML, CSS, and Bootstrap, featuring a typewriter effect to showcase info, skills, services, and work in a clean responsive design.",
     tech: ["Html", "CSS" , "Bootstrap"],
     link: "https://abdelazemelwan1.github.io/Bezel/",
+    gitHub: "https://github.com/Abdelazemelwan1/Bezel",
     image: ht9,
     category: "Html & CSS & Bootstrap",
   },
   {
     title: "EliteCorp",
-    description: "A website built with HTML, CSS, and Bootstrap, showcasing office designs and a variety of electronics, along with highlighting the people behind these products and services. It features a clean, well-structured layout, and is fully responsive to provide a smooth experience across all devices .",
+    description: "A website built with HTML, CSS, and Bootstrap, showcasing office designs and a variety of electronics, along  the people behind these products and services. It features a clean, well-structured layout, responsive to provide a smooth experience across all devices .",
     tech: ["Html", "CSS" , "Bootstrap"],
     link: "https://abdelazemelwan1.github.io/EliteCorp/",
+    gitHub: "https://github.com/Abdelazemelwan1/EliteCorp",
     image: ht11,
     category: "Html & CSS & Bootstrap",
   },
@@ -185,14 +202,16 @@ const dummyProjects = [
     description: "A personal portfolio website built with HTML, CSS, and Bootstrap. It showcases skills, services, projects, and achievements with an elegant design, plus integrated social media links.",
     tech: ["Html", "CSS" , "Bootstrap"],
     link: "https://abdelazemelwan1.github.io/DevFolio/",
+    gitHub: "https://github.com/Abdelazemelwan1/DevFolio",
     image: ht8,
     category: "Html & CSS & Bootstrap",
   },
   {
     title: "Lfaspes",
-    description: "A fully developed website built with HTML, CSS, and Bootstrap, showcasing a wide range of clothing collections with well-structured sections, including fashion logos and popular clothing brands, with a fully responsive design that works smoothly across all devices.",
+    description: "A fully developed website built with HTML, CSS, and Bs5, showcasing a wide range of clothing collections with well-structured sections, including fashion logos and popular clothing brands, with a fully responsive design that works smoothly across all devices.",
     tech: ["Html", "CSS" , "Bootstrap"],
     link: "https://abdelazemelwan1.github.io/lfaspes/",
+    gitHub: "https://github.com/Abdelazemelwan1/lfaspes",
     image: ht10,
     category: "Html & CSS & Bootstrap",
   },
@@ -201,6 +220,7 @@ const dummyProjects = [
     description: "An interactive website designed to showcase gym workouts and available trainers with their expertise , Includes guided explanations on how to perform exercises correctly with visuals , Fully responsive design, optimized for all devices",
     tech: ["Html", "CSS" , "Media Query"],
     link: "https://abdelazemelwan1.github.io/The-jam/",
+    gitHub: "https://github.com/Abdelazemelwan1/The-jam",
     image: ht6,
     category: "Html & CSS & Bootstrap",
   },
@@ -209,14 +229,16 @@ const dummyProjects = [
     description: "simple project built with HTML and CSS to showcase cat images and information. It highlights clean design, responsive layout, and strengthens my front-end development skills.",
     tech: ["Html", "CSS" , "Media Query"],
     link: "https://abdelazemelwan1.github.io/My-First-Project/",
+    gitHub: "https://github.com/Abdelazemelwan1/My-First-Project",
     image: ht1,
     category: "Html & CSS & Bootstrap",
   },
-    {
+  {
     title: "Portfolio",
     description: "A simple personal portfolio built with HTML, CSS, and Media Query. Showcases skills, experience, and education in a clean, responsive design.",
     tech: ["Html", "CSS" , "Media Query"],
     link: "https://abdelazemelwan1.github.io/personal-portfolio/",
+    gitHub: "https://github.com/Abdelazemelwan1/personal-portfolio",
     image: ht3,
     category: "Html & CSS & Bootstrap",
   },
@@ -225,6 +247,7 @@ const dummyProjects = [
     description: "Fokir is a simple personal website built with HTML, CSS, and Media Query for responsive design. It includes sections like About, Services, and Portfolio with images and videos. The goal is to showcase clean design and my skills in creating responsive layouts.",
     tech: ["Html", "CSS" , "Media Query"],
     link: "https://abdelazemelwan1.github.io/fokir/",
+    gitHub: "https://github.com/Abdelazemelwan1/fokir",
     image: ht2,
     category: "Html & CSS & Bootstrap",
   },
@@ -233,14 +256,16 @@ const dummyProjects = [
     description: "A simple website built with HTML, CSS, and Media Query for a responsive design. Showcases houses and installation/decor services with images and details. The goal is to highlight my skills in creating clean and user-friendly layouts.",
     tech: ["Html", "CSS" , "Media Query"],
     link: "https://abdelazemelwan1.github.io/Solar/",
+    gitHub: "https://github.com/Abdelazemelwan1/Solar",
     image: ht4,
     category: "Html & CSS & Bootstrap",
   },
   {
     title: "SpiderMan",
-    description: "An entertainment website about Spider-Man, built with HTML, CSS, and Media Query for a responsive design. It showcases Spider-Man’s movies and series with images, titles, and details. The goal is to highlight my skills in organizing content and creating engaging, mobile-friendly web pages.",
+    description: "An entertainment website about Spider-Man built with HTML, CSS, and Media Query for responsive design. It showcases Spider-Man’s movies and series with images and details, highlighting my skills in organizing content and creating engaging, mobile-friendly pages.",
     tech: ["Html", "CSS" , "Media Query"],
     link: "https://abdelazemelwan1.github.io/Spider-Man/",
+    gitHub: "https://github.com/Abdelazemelwan1/Spider-Man",
     image: ht5,
     category: "Html & CSS & Bootstrap",
   },
@@ -310,31 +335,40 @@ const ProjectCard = ({ project }) => {
     };
 
     return (
-    <a
-    href={project.link} target="_blank" rel="noopener noreferrer"
+    <div
+    // href={project.link} target="_blank" 
+    // rel="noopener noreferrer"
     //  transition-all hover:scale-[1.06]
-        className="ease-in-out z-10 group relative h-64 sm:h-72 rounded-2xl overflow-hidden transition-shadow duration-500 hover:shadow-lg hover:shadow-cyan-500/30"
-        style={{ background: `url('${project.image}') center/cover no-repeat`, cursor: 'pointer' ,transformOrigin: 'center',}}
+        className="ease-in-out z-10 group relative h-70 sm:h-80 rounded-2xl overflow-hidden transition-shadow duration-500 hover:shadow-lg hover:shadow-cyan-500/30"
+        style={{ background: `url('${project.image}') center/cover no-repeat`, transformOrigin: 'center',}}
     >
         <div className=" absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300 flex flex-col justify-between p-4 sm:p-6 text-white">
-        <div>
-            <h3 className="text-lg sm:text-xl font-bold text-cyan-300">{project.title}</h3>
-            <p className="text-slate-300 mt-2 text-xs sm:text-sm leading-relaxed">{project.description}</p>
-        </div>
-        <div className="flex items-end justify-between">
-            <div className="flex flex-wrap gap-2 mt-4">
-            {project.tech.map((t, i) => (
-                <span key={i} className="flex items-center gap-1 text-xs font-mono px-2 py-1 rounded-full bg-cyan-900/70 text-cyan-200 border border-cyan-800/30 backdrop-blur-sm">
-                {techIcons?.[t] || t}
-                </span>
-            ))}
-            </div>
-            <FaExternalLinkAlt className="text-slate-300 group-hover:text-cyan-200 transition-colors duration-300" />
-        </div>
+          <div className='[backdrop-filter:blur(20px)] bg-black/10 rounded-2xl p-1 '>
+              <h3 className="text-lg sm:text-xl font-bold text-cyan-300">{project.title}</h3>
+              <p className="text-slate-300 mt-2 text-xs sm:text-sm leading-relaxed  ">{project.description}</p>
+          </div>
+          <div className="flex items-end justify-between mb-2">
+              <div className="flex flex-wrap gap-2 mt-4">
+              {project.tech.map((t, i) => (
+                  <span key={i} className="flex items-center gap-1 text-xs font-mono px-2 py-1 rounded-full bg-cyan-900/70 text-cyan-200 border border-cyan-800/30 backdrop-blur-sm">
+                  {techIcons?.[t] || t}
+                  </span>
+              ))}
+              </div>
+            
+          </div>
+          <div className='flex items-center justify-between mt-2 '>
+            <a href={project.gitHub} target="_blank" rel="noopener noreferrer" className='z-40 absolute bottom-3 left-5'>
+              <IoLogoGithub  className="text-slate-300 group-hover:text-cyan-200 transition-colors duration-300 text-xl" />
+            </a>
+            <a href={project.link} target="_blank" rel="noopener noreferrer " className='z-40 absolute bottom-3 right-5'>
+              <FaExternalLinkAlt className="text-slate-300 group-hover:text-cyan-200 transition-colors duration-300 " />
+            </a>
+          </div>
         </div>
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div className="absolute inset-0 rounded-2xl border border-cyan-300/10 pointer-events-none"></div>
-    </a>
+    </div>
     );
 };
 

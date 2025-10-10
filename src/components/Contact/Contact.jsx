@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Style from "./Contact.module.css"
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaInstagram, FaTiktok, FaPaperPlane, FaUser, FaEnvelope, FaComment, FaCamera,FaHeart,FaReply,FaTrash,FaCog,FaLinkedin} from 'react-icons/fa';
-import { SiFacebook, SiTiktok } from 'react-icons/si';
+import { FaGithub, FaInstagram, FaTiktok, FaPaperPlane, FaUser, FaEnvelope, FaComment, FaCamera,FaHeart,FaReply,FaTrash,FaCog,FaLinkedin, FaWhatsapp} from 'react-icons/fa';
+import { SiFacebook, SiGmail, SiTiktok } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
 import toast from 'react-hot-toast';
 import { collection, addDoc , getDocs, doc, updateDoc, increment } from "firebase/firestore";
@@ -23,26 +23,26 @@ const Contact = () => {
   const [isSubmittingContact, setIsSubmittingContact] = useState(false);
 
   // States  comments بتاع اترك تعليقinput  الحاله بتاع ال 
-  const [commentForm, setCommentForm] = useState({
-    name: '',
-    message: '',
-    photo: null,
-    photoPreview: null
-  });
+  // const [commentForm, setCommentForm] = useState({
+  //   name: '',
+  //   message: '',
+  //   photo: null,
+  //   photoPreview: null
+  // });
 
 // الي بخزن فيها التعليقاتstate  ال 
-  const [comments, setComments] = useState([]);
+  // const [comments, setComments] = useState([]);
 
   // بتاع التعليقاتsubmit  زرار ال 
-  const [isSubmittingComment, setIsSubmittingComment] = useState(false);
+  // const [isSubmittingComment, setIsSubmittingComment] = useState(false);
 
   // Load comments dari localStorage (simulasi JSON file)
-  useEffect(() => {
-    const savedComments = localStorage.getItem('portfolioComments');
-    if (savedComments) {
-      setComments(JSON.parse(savedComments));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const savedComments = localStorage.getItem('portfolioComments');
+  //   if (savedComments) {
+  //     setComments(JSON.parse(savedComments));
+  //   }
+  // }, []);
 
   // Handle contact form  بتاع اتصل بي form بتهندل ال
   const handleContactSubmit = async (e) => {
@@ -70,90 +70,91 @@ const Contact = () => {
 };
 
   // Handle photo upload  الي بتهندل الصورهfunction ال 
-  const handlePhotoUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setCommentForm(prev => ({
-          ...prev,
-          photo: file,
-          photoPreview: reader.result
-        }));
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  // const handlePhotoUpload = (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     const reader = new FileReader();
+  //     reader.onload = () => {
+  //       setCommentForm(prev => ({
+  //         ...prev,
+  //         photo: file,
+  //         photoPreview: reader.result
+  //       }));
+  //     };
+  //     reader.readAsDataURL(file);
+  //   }
+  // };
 
   // Handle comment submit  بتاع اترك تعليقform  الي بتهندل ال 
-  const handleCommentSubmit = async  (e) => {
-     e.preventDefault();
-  if (!commentForm.name.trim() || !commentForm.message.trim()) return;
+  // const handleCommentSubmit = async  (e) => {
+  //    e.preventDefault();
+  // if (!commentForm.name.trim() || !commentForm.message.trim()) return;
 
-  setIsSubmittingComment(true);
+  // setIsSubmittingComment(true);
 
-  const newComment = {
-    name: commentForm.name,
-    message: commentForm.message,
-    photo: commentForm.photoPreview || `https://ui-avatars.com/api/?name=${encodeURIComponent(commentForm.name)}&background=00ffdc&color=000754&size=100`,
-    timestamp: new Date().toISOString(),
-    likes: 0
-  };
+  // const newComment = {
+  //   name: commentForm.name,
+  //   message: commentForm.message,
+  //   photo: commentForm.photoPreview || `https://ui-avatars.com/api/?name=${encodeURIComponent(commentForm.name)}&background=00ffdc&color=000754&size=100`,
+  //   timestamp: new Date().toISOString(),
+  //   likes: 0
+  // };
 
-  try {
-    await addDoc(collection(db, "comments"), newComment);
-    toast.success("Comment added!");
-    setCommentForm({ name: '', message: '', photo: null, photoPreview: null });
-    fetchComments(); // بعد الإضافة، هنجدد القائمة
-  } catch (error) {
-    toast.error("Error adding comment!");
-    console.error(error);
-  }
+  // try {
+  //   await addDoc(collection(db, "comments"), newComment);
+  //   toast.success("Comment added!");
+  //   setCommentForm({ name: '', message: '', photo: null, photoPreview: null });
+  //   fetchComments(); // بعد الإضافة، هنجدد القائمة
+  // } catch (error) {
+  //   toast.error("Error adding comment!");
+  //   console.error(error);
+  // }
 
-  setIsSubmittingComment(false);
-  };
+  // setIsSubmittingComment(false);
+  // };
   
 
   // جلب التعليقات من Firestore
-const fetchComments = async () => {
-  const querySnapshot = await getDocs(collection(db, "comments"));
-  const commentsData = querySnapshot.docs.map(doc => ({
-    id: doc.id,
-    ...doc.data(),
-  }));
-  setComments(commentsData);
-};
+// const fetchComments = async () => {
+//   const querySnapshot = await getDocs(collection(db, "comments"));
+//   const commentsData = querySnapshot.docs.map(doc => ({
+//     id: doc.id,
+//     ...doc.data(),
+//   }));
+//   setComments(commentsData);
+// };
 
 // تحميل التعليقات عند الفتح
-useEffect(() => {
-  fetchComments();
-}, []);
+// useEffect(() => {
+//   fetchComments();
+// }, []);
 
   // Handle like comment بتهندل القلب بتاع التعليق 
-  const handleLikeComment = async (commentId) => {
-    const commentRef = doc(db, "comments", commentId);
-    await updateDoc(commentRef, {
-      likes: increment(1) // تزود لايك واحد
-    });
-};
+//   const handleLikeComment = async (commentId) => {
+//     const commentRef = doc(db, "comments", commentId);
+//     await updateDoc(commentRef, {
+//       likes: increment(1) // تزود لايك واحد
+//     });
+// };
 
   // Handle like comment بتهندل القلب بتاع التعليق 
-useEffect(() => {
-  const unsubscribe = onSnapshot(collection(db, "comments"), (snapshot) => {
-    const commentsData = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    }));
-    setComments(commentsData);
-  });
+// useEffect(() => {
+//   const unsubscribe = onSnapshot(collection(db, "comments"), (snapshot) => {
+//     const commentsData = snapshot.docs.map(doc => ({
+//       id: doc.id,
+//       ...doc.data()
+//     }));
+//     setComments(commentsData);
+//   });
 
-  return () => unsubscribe(); // عشان توقف التحديث لما الكمبوننت يتشال
-}, []);
+//   return () => unsubscribe(); // عشان توقف التحديث لما الكمبوننت يتشال
+// }, []);
 
 // االسوشيل ميديا 
   const socialLinks = [
     {
       name: 'GitHub',
+      Fname: 'Follow',
       icon: <FaGithub />,
       url: 'https://github.com/Abdelazemelwan1',
       color: 'from-gray-600 to-gray-800',
@@ -161,25 +162,42 @@ useEffect(() => {
     },
     {
       name: 'Linkedin',
+      Fname: 'Follow',
       icon: <FaLinkedin />,
       url: 'https://www.linkedin.com/in/abdelazem-elwan-904619252',
       color: 'from-[#0A66C2] to-[#004182]',
       hoverColor: 'hover:shadow-[#0A66C2]/25'
     },
     {
-      name: 'Instagram',
-      icon: <FaInstagram />,
-      url: 'https://www.instagram.com/abdelazem_elwan?igsh=ZzlsZjc5dDY3aXNp&utm_source=qr',
-      color: 'from-pink-500 to-purple-600',
-      hoverColor: 'hover:shadow-pink-500/25'
+      name: 'Gmail',
+      Fname: 'Send',
+      icon: <SiGmail />,
+      url: 'mailto:abdelazemelwan123@gmail.com?subject=Hello&body=I%20want%20to%20contact%20you',
+      color: 'from-emerald-900 to-red-900 ',
+      hoverColor: 'hover:shadow-emerald-500/25'
     },
     {
-      name: 'Facebook',
-      icon: <SiFacebook />,
-      url: 'https://www.facebook.com/abdelazem.elwan.9/',
-      color: 'from-[#0A65C0] to-[#0866FF]',
-      hoverColor: 'hover:shadow-[#0A65C0]/25'
-    }
+      name: 'Whatsapp',
+      Fname: 'Send',
+      icon: <FaWhatsapp />,
+      url: 'https://wa.me/201062086573',
+      color: 'from-emerald-400 to-emerald-600 ',
+      hoverColor: 'hover:shadow-emerald-500/25'
+    },
+    // {
+    //   name: 'Instagram',
+    //   icon: <FaInstagram />,
+    //   url: 'https://www.instagram.com/abdelazem_elwan?igsh=ZzlsZjc5dDY3aXNp&utm_source=qr',
+    //   color: 'from-pink-500 to-purple-600',
+    //   hoverColor: 'hover:shadow-pink-500/25'
+    // },
+    // {
+    //   name: 'Facebook',
+    //   icon: <SiFacebook />,
+    //   url: 'https://www.facebook.com/abdelazem.elwan.9/',
+    //   color: 'from-[#0A65C0] to-[#0866FF]',
+    //   hoverColor: 'hover:shadow-[#0A65C0]/25'
+    // }
   ];
 
   return (
@@ -188,7 +206,7 @@ useEffect(() => {
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900/20 via-transparent to-cyan-900/10"></div>
       
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-cyan-500/10 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute  top-20 left-10 w-20 h-20 bg-cyan-500/10 rounded-full blur-xl animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
       <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-500/10 rounded-full blur-xl animate-pulse delay-500"></div>
 
@@ -304,7 +322,8 @@ useEffect(() => {
             </div>
 
             {/* أو or  ال  */}
-            <div className="flex items-center gap-4">
+          </motion.div>
+            <div className="flex lg:hidden items-center gap-4">
               <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"></div>
               <span className="text-slate-400 font-semibold">{t("or")}</span>
               <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"></div>
@@ -312,8 +331,8 @@ useEffect(() => {
 
             {/* Social Media Acconted */}
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-              <div className="relative bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 border border-slate-700/50">
+              {/* <div className="absolute -inset-1 bg-gradient-to-r  from-purple-600 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div> */}
+              <div className="relative z-10 bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 border border-slate-700/50">
                 <h3 className="text-2xl font-bold text-white mb-6 text-center">{t("connect")}</h3>
                 <div className="grid gap-4">
                   {socialLinks.map((social, index) => (
@@ -334,7 +353,7 @@ useEffect(() => {
                       </div>
                       <div className="flex-1">
                         <span className="font-semibold">{social.name}</span>
-                        <p className="text-sm opacity-90">Follow me on {social.name}</p>
+                        <p className="text-sm opacity-90">{social.Fname} me on {social.name}</p>
                       </div>
                       <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <FaReply className="rotate-180" />
@@ -343,181 +362,171 @@ useEffect(() => {
                   ))}
                 </div>
               </div>
+              
             </div>
-          </motion.div>
 
           {/* Right Side - Comments System */}
-          <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8, ease: "easeOut" }} className="space-y-8">
-            {/* Comment Form اترك تعليق */}
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-              <div className="relative bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 border border-slate-700/50">
-              {/* اترك تعليق  */}
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-full">
-                    <FaComment className="text-white text-xl" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white">{t("leaveComment")}</h3>
-                    <p className="text-slate-400">{t("shareThoughts")}</p>
-                  </div>
-                </div>
-
-                {/*بتاع اترك تعليق  form  ال  */}
-                <form onSubmit={handleCommentSubmit} className="space-y-6">
-                  <div className="flex flex-col md:flex-row gap-4">
-                    {/* الجزء بتاع الصورة */}
-                    <div className="flex-shrink-0 text-center m-a uto">
-                      <div className="relative">
-                        <div className="w-16 h-16 rounded-full bg-slate-700 border-2 border-slate-600 overflow-hidden">
-                          {commentForm.photoPreview ? (
-                            <img src={commentForm.photoPreview} alt="Preview" className="w-full h-full object-cover" />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center text-slate-400">
-                              <FaCamera />
-                            </div>
-                          )}
-                        </div>
-                        <label className={`absolute -bottom-2  ${i18n.language == "en" ? "md:-right-2 left-10"  : "right-10"} bg-cyan-600 text-white p-2 rounded-full cursor-pointer hover:bg-cyan-500 transition-colors duration-300`}>
-                          <FaCamera className="text-sm" />
-                          <input
-                            type="file"
-                            accept="image/*"
-                            onChange={handlePhotoUpload}
-                            className="hidden"
-                          />
-                        </label>
-                      </div>
-                    </div>
-
-                    <div className="flex-1 space-y-4">
-                      <input
-                        type="text"
-                        placeholder={t("Yourname")}
-                        value={commentForm.name}
-                        onChange={(e) => setCommentForm(prev => ({ ...prev, name: e.target.value }))}
-                        className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all duration-300"
-                        required
-                      />
-                      <textarea
-                        placeholder={t("writeComment")}
-                        rows="3"
-                        value={commentForm.message}
-                        onChange={(e) => setCommentForm(prev => ({ ...prev, message: e.target.value }))}
-                        className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all duration-300 resize-none"
-                        required
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <motion.button
-                    type="submit"
-                    disabled={isSubmittingComment}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="cursor-pointer w-full bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-500 hover:to-blue-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-emerald-500/25 disabled:opacity-50"
-                  >
-                    {isSubmittingComment ? (
-                      <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    ) : (
-                      <>
-                        <FaComment />
-                        <span>{t("postComment")}</span>
-                      </>
-                    )}
-                  </motion.button>
-                </form>
-
-              </div>
-            </div>
-
-            {/* Comments Display عرض الكومنت الي هعملو*/}
-            <div className="space-y-4">
-              {/* عدد التعليقات */}
-              <h4 className="text-xl font-bold text-white flex items-center gap-2">
-                <FaComment className="text-cyan-400" />
-                {t("comments")} ({comments.length})
-              </h4>
-              {/* التعليق */}
-              <div className={`space-y-4 max-h-96 overflow-y-auto  ${Style['custom-scrollbar']}`}>
-                <AnimatePresence>
-                  {comments.map((comment, index) => (
-                    <motion.div
-                      key={comment.id}
-                      initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9, x: -100 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/30 hover:border-cyan-400/30 transition-all duration-300"
-                    >
-                      <div className="flex gap-4">
-                        <img 
-                          src={comment.photo} 
-                          alt={comment.name}
-                          className="w-12 h-12 rounded-full object-cover border-2 border-slate-600"
-                        />
-                        <div className="flex-1">
-                          <div className="flex items-start justify-between">
-                            <div>
-                              <h5 className="font-semibold text-white">{comment.name}</h5>
-                              <p className="text-xs text-slate-400">
-                              {new Date(comment.timestamp).toLocaleDateString(i18n.language, {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric',
-                                hour: '2-digit',
-                                minute: '2-digit'
-                              })}
-                              </p>
-                            </div>
-                          </div>
-                          <p className="text-slate-300 mt-2 leading-relaxed">{comment.message}</p>
-                          <div className="flex items-center gap-4 mt-4">
-                            <button
-                              onClick={() => handleLikeComment(comment.id)}
-                              className="flex items-center gap-2 text-slate-400 hover:text-red-400 transition-colors duration-300 group/like"
-                            >
-                              <FaHeart className="group-hover/like:scale-110 transition-transform duration-300" />
-                              <span className="text-sm">{comment.likes}</span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-                {/* لو مفيش تعليقات لسا */}
-                {comments.length === 0 && (
-                  <div className="text-center py-12 text-slate-400">
-                    <FaComment className="text-4xl mx-auto mb-4 opacity-50" />
-                    <p>{t("noComments")}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </motion.div>
+        {/* لو ضفته تاني Comments  جزء ال */}
         </div>
       </div>
 
-      {/* Custom Scrollbar Styles */}
-      {/* <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(51, 65, 85, 0.3);
-          border-radius: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, #06b6d4, #10b981);
-          border-radius: 3px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(to bottom, #0891b2, #059669);
-        }
-      `}</style> */}
+
     </section>
   );
 };
 
 export default Contact;
+
+
+
+// لو ضفته تاني Comments  جزء ال 
+
+  // <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8, ease: "easeOut" }} className="space-y-8">
+  //           {/* Comment Form اترك تعليق */}
+  //           <div className="relative group">
+  //             <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+  //             <div className="relative bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 border border-slate-700/50">
+  //             {/* اترك تعليق  */}
+  //               <div className="flex items-center gap-3 mb-6">
+  //                 <div className="p-3 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-full">
+  //                   <FaComment className="text-white text-xl" />
+  //                 </div>
+  //                 <div>
+  //                   <h3 className="text-xl md:text-2xl font-bold text-white">{t("leaveComment")}</h3>
+  //                   <p className="text-slate-400">{t("shareThoughts")}</p>
+  //                 </div>
+  //               </div>
+
+  //               {/*بتاع اترك تعليق  form  ال  */}
+  //                   {/* الجزء بتاع الصورة */}
+  //               {/* <form onSubmit={handleCommentSubmit} className="space-y-6">
+  //                 <div className="flex flex-col md:flex-row gap-4">
+  //                   <div className="flex-shrink-0 text-center m-a uto">
+  //                     <div className="relative">
+  //                       <div className="w-16 h-16 rounded-full bg-slate-700 border-2 border-slate-600 overflow-hidden">
+  //                         {commentForm.photoPreview ? (
+  //                           <img src={commentForm.photoPreview} alt="Preview" className="w-full h-full object-cover" />
+  //                         ) : (
+  //                           <div className="w-full h-full flex items-center justify-center text-slate-400">
+  //                             <FaCamera />
+  //                           </div>
+  //                         )}
+  //                       </div>
+  //                       <label className={`absolute -bottom-2  ${i18n.language == "en" ? "md:-right-2 left-10"  : "right-10"} bg-cyan-600 text-white p-2 rounded-full cursor-pointer hover:bg-cyan-500 transition-colors duration-300`}>
+  //                         <FaCamera className="text-sm" />
+  //                         <input
+  //                           type="file"
+  //                           accept="image/*"
+  //                           onChange={handlePhotoUpload}
+  //                           className="hidden"
+  //                         />
+  //                       </label>
+  //                     </div>
+  //                   </div>
+
+  //                   <div className="flex-1 space-y-4">
+  //                     <input
+  //                       type="text"
+  //                       placeholder={t("Yourname")}
+  //                       value={commentForm.name}
+  //                       onChange={(e) => setCommentForm(prev => ({ ...prev, name: e.target.value }))}
+  //                       className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all duration-300"
+  //                       required
+  //                     />
+  //                     <textarea
+  //                       placeholder={t("writeComment")}
+  //                       rows="3"
+  //                       value={commentForm.message}
+  //                       onChange={(e) => setCommentForm(prev => ({ ...prev, message: e.target.value }))}
+  //                       className="w-full px-4 py-3 bg-slate-800/50 border border-slate-600/50 rounded-xl text-white placeholder-slate-400 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all duration-300 resize-none"
+  //                       required
+  //                     ></textarea>
+  //                   </div>
+  //                 </div>
+
+  //                 <motion.button
+  //                   type="submit"
+  //                   disabled={isSubmittingComment}
+  //                   whileHover={{ scale: 1.02 }}
+  //                   whileTap={{ scale: 0.98 }}
+  //                   className="cursor-pointer w-full bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-500 hover:to-blue-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-emerald-500/25 disabled:opacity-50"
+  //                 >
+  //                   {isSubmittingComment ? (
+  //                     <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+  //                   ) : (
+  //                     <>
+  //                       <FaComment />
+  //                       <span>{t("postComment")}</span>
+  //                     </>
+  //                   )}
+  //                 </motion.button>
+  //               </form> */}
+
+  //             </div>
+  //           </div>
+
+  //           {/* Comments Display عرض الكومنت الي هعملو*/}
+  //           <div className="space-y-4">
+  //             {/* عدد التعليقات */}
+  //             <h4 className="text-xl font-bold text-white flex items-center gap-2">
+  //               <FaComment className="text-cyan-400" />
+  //               {t("comments")} ({comments.length})
+  //             </h4>
+  //             {/* التعليق */}
+  //             <div className={`space-y-4 max-h-96 overflow-y-auto  ${Style['custom-scrollbar']}`}>
+  //               <AnimatePresence>
+  //                 {comments.map((comment, index) => (
+  //                   <motion.div
+  //                     key={comment.id}
+  //                     initial={{ opacity: 0, y: 50, scale: 0.9 }}
+  //                     animate={{ opacity: 1, y: 0, scale: 1 }}
+  //                     exit={{ opacity: 0, scale: 0.9, x: -100 }}
+  //                     transition={{ duration: 0.5, delay: index * 0.1 }}
+  //                     className="group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/30 hover:border-cyan-400/30 transition-all duration-300"
+  //                   >
+  //                     <div className="flex gap-4">
+  //                       <img 
+  //                         src={comment.photo} 
+  //                         alt={comment.name}
+  //                         className="w-12 h-12 rounded-full object-cover border-2 border-slate-600"
+  //                       />
+  //                       <div className="flex-1">
+  //                         <div className="flex items-start justify-between">
+  //                           <div>
+  //                             <h5 className="font-semibold text-white">{comment.name}</h5>
+  //                             <p className="text-xs text-slate-400">
+  //                             {new Date(comment.timestamp).toLocaleDateString(i18n.language, {
+  //                               year: 'numeric',
+  //                               month: 'long',
+  //                               day: 'numeric',
+  //                               hour: '2-digit',
+  //                               minute: '2-digit'
+  //                             })}
+  //                             </p>
+  //                           </div>
+  //                         </div>
+  //                         <p className="text-slate-300 mt-2 leading-relaxed">{comment.message}</p>
+  //                         <div className="flex items-center gap-4 mt-4">
+  //                           <button
+  //                             onClick={() => handleLikeComment(comment.id)}
+  //                             className="flex items-center gap-2 text-slate-400 hover:text-red-400 transition-colors duration-300 group/like"
+  //                           >
+  //                             <FaHeart className="group-hover/like:scale-110 transition-transform duration-300" />
+  //                             <span className="text-sm">{comment.likes}</span>
+  //                           </button>
+  //                         </div>
+  //                       </div>
+  //                     </div>
+  //                   </motion.div>
+  //                 ))}
+  //               </AnimatePresence>
+  //               {/* لو مفيش تعليقات لسا */}
+  //               {comments.length === 0 && (
+  //                 <div className="text-center py-12 text-slate-400">
+  //                   <FaComment className="text-4xl mx-auto mb-4 opacity-50" />
+  //                   <p>{t("noComments")}</p>
+  //                 </div>
+  //               )}
+  //             </div>
+  //           </div>
+  //         </motion.div>

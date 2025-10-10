@@ -36,7 +36,7 @@ export default function Home() {
   const stats = [
     { icon: <FaCode />, value: "+24", title: t('title1'), description: t('descr1') },
     { icon: <MdModelTraining />, value: "1", title: t('title2'), description: t('descr2') },
-    { icon: <FaGlobe />, value: "+1", title: t('title3'), description: t('descr3') },
+    { icon: <FaGlobe />, value: "Fresh", title: t('title3'), description: t('descr3') },
   ];
 
   // useEffect(()=>{
@@ -91,9 +91,9 @@ export default function Home() {
               <a href="https://github.com/Abdelazemelwan1" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="group relative flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-900/[0.8] text-white transition-all duration-300 hover:border-cyan-400 hover:bg-slate-800 hover:shadow-[0_0_24px_2px_#00ffdc]">
                   <FaGithub className="h-6 w-6 text-slate-400 transition-all duration-300 group-hover:text-cyan-300" />
               </a>
-              <a href="https://www.instagram.com/abdelazem_elwan?igsh=ZzlsZjc5dDY3aXNp&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" className="group relative flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-900/[0.8] text-white transition-all duration-300 hover:border-cyan-400 hover:bg-slate-800 hover:shadow-[0_0_24px_2px_#00ffdc]">
+              {/* <a href="https://www.instagram.com/abdelazem_elwan?igsh=ZzlsZjc5dDY3aXNp&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" className="group relative flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-900/[0.8] text-white transition-all duration-300 hover:border-cyan-400 hover:bg-slate-800 hover:shadow-[0_0_24px_2px_#00ffdc]">
                   <FaInstagram className="h-6 w-6 text-slate-400 transition-all duration-300 group-hover:text-cyan-300" />
-              </a>
+              </a> */}
               <a href="https://www.linkedin.com/in/abdelazem-elwan-904619252" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="group relative flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-slate-900/[0.8] text-white transition-all duration-300 hover:border-cyan-400 hover:bg-slate-800 hover:shadow-[0_0_24px_2px_#00ffdc]">
                   <FaLinkedin className="h-6 w-6 text-slate-400 transition-all duration-300 group-hover:text-cyan-300" />
               </a>
@@ -152,7 +152,7 @@ export default function Home() {
                 "{t('shall')}"
               </div>
               <div className="flex flex-row sm:flex-row gap-4 mt-8 justify-center md:justify-start items-center">
-                <ButtonMovingBorder as="a" href="https://drive.google.com/file/d/1izMRneqkDedXi1Ln670RHTl_ShWk7BWt/view?usp=sharing"  download duration={3000} borderRadius="0.75rem" className="bg-slate-900/[0.8] border border-slate-800 text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_24px_8px_#40ffaa]" target="_blank">
+                <ButtonMovingBorder as="a" href="https://drive.google.com/file/d/15GkDWv1SXNxI-QldD0ymkuP7AcQ4UeXy/view?usp=sharing"  download duration={3000} borderRadius="0.75rem" className="bg-slate-900/[0.8] border border-slate-800 text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_24px_8px_#40ffaa]" target="_blank">
                   <FaDownload /> {t('cv')}
                 </ButtonMovingBorder>
                 <ButtonMovingBorder as="a" href="#projects" duration={3000} borderRadius="0.75rem" className="bg-slate-900/[0.8] border border-slate-800 text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_24px_8px_#40ffaa]">
@@ -174,7 +174,7 @@ export default function Home() {
                     <p className="text-xs text-slate-500 mt-1  w-full">{stat.description}</p>
                   </div>
                   <div className="flex flex-col items-end">
-                    <p className="text-5xl font-bold text-white transition-all duration-300 group-hover:text-cyan-300">{stat.value}</p>
+                    <p className={` text-white transition-all duration-300 group-hover:text-cyan-300 ${stat.value === "Fresh" ? "text-4xl font-medium" : "text-5xl font-bold"}`}>{stat.value}</p>
                     <FaArrowRight className="text-slate-600 mt-auto group-hover:text-cyan-400 transition-all duration-300 -rotate-45" />
                   </div>
                 </div>
