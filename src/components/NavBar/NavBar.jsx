@@ -56,7 +56,7 @@ useEffect(() => {
       <a
         href={href}
         onClick={() => setIsMenuOpen(false)} 
-        className="relative block text-white font-[cursive] font-bold text-lg tracking-wider py-2 transition-transform duration-300 hover:scale-110 group"
+        className="relative block text-white font-[sans-serif] font-bold text-lg tracking-wider py-2 transition-transform duration-300 hover:scale-110 group"
       >
         {children}
         <span className="absolute bottom-1 left-0 block h-[2px] w-0 bg-[#00ffdc] transition-all duration-500 group-hover:w-full"></span>
