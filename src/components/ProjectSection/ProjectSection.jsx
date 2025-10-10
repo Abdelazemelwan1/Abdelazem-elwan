@@ -339,7 +339,7 @@ const ProjectCard = ({ project }) => {
     // href={project.link} target="_blank" 
     // rel="noopener noreferrer"
     //  transition-all hover:scale-[1.06]
-        className="ease-in-out z-10 group relative h-70 sm:h-80 rounded-2xl overflow-hidden transition-shadow duration-500 hover:shadow-lg hover:shadow-cyan-500/30"
+        className="ease-in-out z-10 group relative h-75 sm:h-80 rounded-2xl overflow-hidden transition-shadow duration-500 hover:shadow-lg hover:shadow-cyan-500/30"
         style={{ background: `url('${project.image}') center/cover no-repeat`, transformOrigin: 'center',}}
     >
         <div className=" absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300 flex flex-col justify-between p-4 sm:p-6 text-white">
