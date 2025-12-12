@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Style from "./Skills.module.css"
 
 const Skills = () => {
-  const skillsList = ['React', 'Javascript', 'Tailwind'];
+  const skillsList = ['Next','React', 'TypeScript', 'Tailwind'];
 
   return (
     <div className="flex flex-row flex-wrap gap-3 mt-6 justify-left w-full">

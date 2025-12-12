@@ -152,7 +152,7 @@ export default function Home() {
                 "{t('shall')}"
               </div>
               <div className="flex flex-row sm:flex-row gap-4 mt-8 justify-center md:justify-start items-center">
-                <ButtonMovingBorder as="a" href="https://drive.google.com/file/d/15GkDWv1SXNxI-QldD0ymkuP7AcQ4UeXy/view?usp=sharing"  download duration={3000} borderRadius="0.75rem" className="bg-slate-900/[0.8] border border-slate-800 text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_24px_8px_#40ffaa]" target="_blank">
+                <ButtonMovingBorder as="a" href="https://drive.google.com/file/d/1qA4YDZnblp4XekT1Ufm4Kre2FKnhuHGJ/view?usp=sharing"  download duration={3000} borderRadius="0.75rem" className="bg-slate-900/[0.8] border border-slate-800 text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_24px_8px_#40ffaa]" target="_blank">
                   <FaDownload /> {t('cv')}
                 </ButtonMovingBorder>
                 <ButtonMovingBorder as="a" href="#projects" duration={3000} borderRadius="0.75rem" className="bg-slate-900/[0.8] border border-slate-800 text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_0_24px_8px_#40ffaa]">

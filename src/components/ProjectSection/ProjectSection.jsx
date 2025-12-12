@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Style from "./ProjectSection.module.css"
 import { motion, AnimatePresence } from "framer-motion";
 import { FaExternalLinkAlt, FaReact, FaNodeJs, FaHtml5, FaCss3Alt,  FaJsSquare, FaTools, FaFigma, FaGithub, FaTimes, FaDownload, FaBootstrap, FaSass, FaFire, FaGithubAlt } from 'react-icons/fa';
-import { SiTailwindcss, SiVercel, SiExpress, SiTypescript, SiJquery,  SiRedux, SiReactquery,  SiReactrouter, SiSwiper, SiReacthookform } from 'react-icons/si';
+import { SiTailwindcss, SiVercel, SiExpress, SiTypescript, SiJquery,  SiRedux, SiReactquery,  SiReactrouter, SiSwiper, SiReacthookform, SiNextdotjs } from 'react-icons/si';
 import { PiCodeBold } from "react-icons/pi";
 import { LiaLayerGroupSolid } from "react-icons/lia";
 import { useNavbar } from './../../contexts/NavbarContext';
@@ -14,12 +14,16 @@ import { IoLogoGithub } from "react-icons/io5";
 
 
 // image React
+import Nex1 from "./../../assets/project/Screenshot 2025-12-12 182048.png";
+import Nex2 from "./../../assets/project/Screenshot 2025-12-12 183248.png";
+// image React
 import pro1 from "./../../assets/project/Screenshot 2025-09-03 162748.png";
-import pro2 from "./../../assets/project/Screenshot 2025-09-03 163623.png";
-import pro3 from "./../../assets/project/Screenshot 2025-09-03 164146.png";
-import pro4 from "./../../assets/project/Screenshot 2025-09-03 170142.png";
-import pro5 from "./../../assets/project/Screenshot 2025-09-06 112549.png";
-import pro6 from "./../../assets/project/Screenshot 2025-09-03 175305.png";
+import pro2 from "./../../assets/project/Screenshot 2025-12-12 174545.png";
+import pro3 from "./../../assets/project/Screenshot 2025-09-03 163623.png";
+import pro4 from "./../../assets/project/Screenshot 2025-09-03 164146.png";
+import pro5 from "./../../assets/project/Screenshot 2025-09-03 170142.png";
+import pro6 from "./../../assets/project/Screenshot 2025-09-06 112549.png";
+import pro7 from "./../../assets/project/Screenshot 2025-09-03 175305.png";
 // image JavaScript
 import js1 from "./../../assets/project/Screenshot 2025-09-03 185800.png";
 import js2 from "./../../assets/project/Screenshot 2025-09-03 191303.png";
@@ -48,7 +52,28 @@ import { MdModelTraining } from 'react-icons/md';
 // All Project Abdelazem (Elwan)
 // ===================================
 const dummyProjects = [
-  // project React 6
+  // project Next 2
+  {
+    title: "Cloud Hosting",
+    description: "Full-Stack CMS (Next.js/Prisma) with responsive frontend (Tailwind CSS) for articles/comments, and a secured Admin Dashboard. (Admin Login: abdelazem@gmail.com / 123456789)",
+    tech: ["Next", "TypeScript" ,"Prisma", "TailwindCSS" , "Formik & Yup" , "Axios" ],
+    link: "https://cloud-hosting-weld-one.vercel.app/",
+    gitHub: "https://github.com/Abdelazemelwan1/cloud-hosting",
+    image: Nex1,
+    category: "Next.js",
+  },
+  {
+    title: "To-Do-List",
+    description: "Full-stack Tasks Management Web Application (Next.js/Tailwind CSS) providing comprehensive CRUD functionality, powered by Prisma ORM for efficient PostgreSQL database interaction.",
+    tech: ["Next", "TypeScript" ,"Prisma", "TailwindCSS" , "Zod" , "React Toastify" , "React Icons" ],
+    link: "https://tasks-list-project-rho.vercel.app/",
+    gitHub: "https://github.com/Abdelazemelwan1/tasks-list-project",
+    image: Nex2,
+    category: "Next.js",
+  },
+
+
+  // project React 7
   {
     title: "E-Commerce Project",
     description: "React e-commerce site built a modern and responsive e-commerce using React, tailwindcss, TanStackQuery.... .",
@@ -59,12 +84,21 @@ const dummyProjects = [
     category: "React.js",
   },
   {
+    title: "DashBoard Project",
+    description: "A comprehensive admin dashboard was developed to display key KPIs, utilizing advanced visualizations to analyze monthly revenue/expense trends and sales distribution by category.",
+    tech: ["React","TypeScript", "TailwindCSS" , "Recharts" , "Lucide-react" ],
+    link: "https://dashbord-rouge.vercel.app/",
+    gitHub: "https://github.com/Abdelazemelwan1/Dashbord",
+    image: pro2,
+    category: "React.js",
+  },
+  {
     title: "E-Commerce Project",
     description: "React E-commerce Website Built a modern and responsive e-Commerce web application that feature a complete shopping journey from product discovery to checkout. .",
     tech: ["React", "TailwindCSS", "Redux Toolkit", "React Hooks"  ,"Axios", "Formik & Yup" ,],
     link: "https://e-commerce-app-web-master-3u3x.vercel.app/",
     gitHub: "https://github.com/Abdelazemelwan1/E-commerceApp_WebMaster",
-    image: pro2,
+    image: pro3,
     category: "React.js",
   },
   {
@@ -73,7 +107,7 @@ const dummyProjects = [
     tech: ["React", "TailwindCSS", "Firebase" ,"Material UI", "Lottie Animations" , ],
     link: "https://crud-web-master-bice.vercel.app/",
     gitHub: "https://github.com/Abdelazemelwan1/CRUD_Web_Master",
-    image: pro3,
+    image: pro4,
     category: "React.js",
   },
   {
@@ -82,7 +116,7 @@ const dummyProjects = [
     tech: ["React", "TailwindCSS", "Swiper" ,"TanStackQuery", "Axios",  "Formik & Yup",   ],
     link: "https://small-e-commerc-web-master.vercel.app/",
     gitHub: "https://github.com/Abdelazemelwan1/small-e-commerc-Web_Master",
-    image: pro4,
+    image: pro5,
     category: "React.js",
   },
   {
@@ -91,7 +125,7 @@ const dummyProjects = [
     tech: ["React", "TailwindCSS",   "Swiper" ,  "react-router-dom", "JSON Server", "AOS" ],
     link: "https://karan-elsham.vercel.app/",
     gitHub: "https://github.com/Abdelazemelwan1/Karan_Elsham",
-    image: pro5,
+    image: pro6,
     category: "React.js",
   },
   {
@@ -100,7 +134,7 @@ const dummyProjects = [
     tech: ["React", "react-router-dom", "react-typed" ,  ],
     link: "https://react-one-sigma-seven.vercel.app/",
     gitHub: "https://github.com/Abdelazemelwan1/ReactOne",
-    image: pro6,
+    image: pro7,
     category: "React.js",
   },
 
@@ -277,8 +311,8 @@ const dummyProjects = [
 // ===================================
 const techStack = {
     frontend: [
+    { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
     { name: "React", icon: <FaReact className="text-[#61DAFB]" /> },
-    // { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
     { name: "Redux", icon: <SiRedux className="text-[#764ABC]" /> },
     { name: "JavaScript", icon: <FaJsSquare className="text-[#F7DF1E]" /> },
     { name: "TypeScript", icon: <SiTypescript  className="text-[#3078C6]" /> },
@@ -328,8 +362,8 @@ const LineShadowText = ({ children, className, shadowColor = "#4079ff", ...props
 // ===================================
 const ProjectCard = ({ project }) => {
     const techIcons = {
-    "TanStackQuery": <SiReactquery />, "React": <FaReact />, "TailwindCSS": <SiTailwindcss />,
-    "react-router-dom": <SiReactrouter />, "Swiper": <SiSwiper />,"Redux Toolkit": <TbBrandRedux />,
+    "TanStackQuery": <SiReactquery />, "React": <FaReact />, "TailwindCSS": <SiTailwindcss />, "TypeScript" : <SiTypescript/>,
+    "react-router-dom": <SiReactrouter />, "Swiper": <SiSwiper />,"Redux Toolkit": <TbBrandRedux />, "Next" : <SiNextdotjs/>,
     "React Hooks": <SiReacthookform />, "Express": <SiExpress />,  "JWT": "🔑","Firebase": <FaFire />,
     "JavaScript": <IoLogoJavascript />, "Bootstrap": <FaBootstrap />,  "html": <IoLogoHtml5 />,"CSS": <FaCss3Alt />,"Html": <IoLogoHtml5 />,
     };
@@ -474,6 +508,7 @@ function ProjectSection() {
                 <>
                   <div className=" gap-4 mb-8 grid grid-cols-2 md:grid-cols-4">
                     <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === '' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('')}>All Project</button>
+                    <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === 'Next.js' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('Next.js')}>Next.js</button>
                     <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === 'React.js' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('React.js')}>React.js</button>
                     <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === 'JavaScript' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('JavaScript')}>JavaScript</button>
                     <button className={`px-5 py-2 rounded-full font-semibold transition-all duration-200 border ${projectCategory === 'Html & CSS & Bootstrap' ? 'bg-cyan-700/80 text-white border-cyan-400 shadow-cyan-500/10 shadow-lg' : 'bg-slate-900/60 text-cyan-200 border-slate-700 hover:bg-cyan-800/40 hover:text-white'}`} onClick={() => setProjectCategory('Html & CSS & Bootstrap')}>Html & CSS & Bootstrap</button>

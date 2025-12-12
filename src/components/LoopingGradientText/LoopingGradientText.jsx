@@ -3,7 +3,7 @@ import Style from "./LoopingGradientText.module.css"
 // import { useState, useEffect } from "react";
 
 // Definisikan teks yang akan ditampilkan secara bergantian
-const TEXTS_TO_TYPE = ["Front End Developer", "React.js"];
+const TEXTS_TO_TYPE = ["Front End Developer", "Next.js && React.js"];
 
 // Komponen utama
 export default function LoopingGradientText({
