@@ -522,12 +522,16 @@ function ProjectSection() {
                   </div>
                 </>
               )}
-              {activeTab === 'Certificate' && (<div className="space-y-8">
+              {activeTab === 'Certificate' && (<><div className="space-y-8">
+                <h3 className="text-xl font-bold text-cyan-300 capitalize mb-4 border-b-2 border-slate-800 pb-2 text-start"> - {t("descr12")}</h3>
+                <h1 className='text-white text-start'>* {t("trening11")}</h1>
+                </div>
+                <div className="space-y-8 mt-6">
                 <h3 className="text-xl font-bold text-cyan-300 capitalize mb-4 border-b-2 border-slate-800 pb-2 text-start"> - {t("descr2")}</h3>
                 <h1 className='text-white text-start'>* {t("trening1")}</h1>
                 <h1 className='text-white text-start'>* {t("trening2")}</h1>
                 <h1 className='text-white text-start'>* {t("trening3")}</h1>
-                </div>)}
+                </div></>)}
               {activeTab === 'Tech Stack' && (
                 <div className="max-w-4xl mx-auto space-y-8">
                   {Object.entries(techStack).map(([category, techs]) => (
