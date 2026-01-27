@@ -14,8 +14,9 @@ import { IoLogoGithub } from "react-icons/io5";
 
 
 // image React
-import Nex1 from "./../../assets/project/Screenshot 2025-12-12 182048.png";
-import Nex2 from "./../../assets/project/Screenshot 2025-12-12 183248.png";
+import Nex1 from "./../../assets/project/Screenshot 2026-01-27 140917.png";
+import Nex2 from "./../../assets/project/Screenshot 2025-12-12 182048.png";
+import Nex3 from "./../../assets/project/Screenshot 2025-12-12 183248.png";
 // image React
 import pro1 from "./../../assets/project/Screenshot 2025-09-03 162748.png";
 import pro2 from "./../../assets/project/Screenshot 2025-12-12 174545.png";
@@ -55,11 +56,20 @@ const dummyProjects = [
   // project Next 2
   {
     title: "Cloud Hosting",
+    description: "Developed a full e-commerce project using Next.js, including interactive user interfaces, product management, shopping cart functionality, and performance optimization.",
+    tech: ["Next", "TypeScript" , "TailwindCSS", "Swiper", "Formik & Yup" , "Axios" ],
+    link: "https://fashique-chi.vercel.app/",
+    gitHub: "https://github.com/Abdelazemelwan1/fashique",
+    image: Nex1,
+    category: "Next.js",
+  },
+  {
+    title: "Cloud Hosting",
     description: "Full-Stack CMS (Next.js/Prisma) with responsive frontend (Tailwind CSS) for articles/comments, and a secured Admin Dashboard. (Admin Login: abdelazem@gmail.com / 123456789)",
     tech: ["Next", "TypeScript" ,"Prisma", "TailwindCSS" , "Formik & Yup" , "Axios" ],
     link: "https://cloud-hosting-weld-one.vercel.app/",
     gitHub: "https://github.com/Abdelazemelwan1/cloud-hosting",
-    image: Nex1,
+    image: Nex2,
     category: "Next.js",
   },
   {
@@ -68,7 +78,7 @@ const dummyProjects = [
     tech: ["Next", "TypeScript" ,"Prisma", "TailwindCSS" , "Zod" , "React Toastify" , "React Icons" ],
     link: "https://tasks-list-project-rho.vercel.app/",
     gitHub: "https://github.com/Abdelazemelwan1/tasks-list-project",
-    image: Nex2,
+    image: Nex3,
     category: "Next.js",
   },
 
