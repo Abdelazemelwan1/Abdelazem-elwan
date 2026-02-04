@@ -55,7 +55,7 @@ import { MdModelTraining } from 'react-icons/md';
 const dummyProjects = [
   // project Next 2
   {
-    title: "Cloud Hosting",
+    title: "fashique",
     description: "Developed a full e-commerce project using Next.js, including interactive user interfaces, product management, shopping cart functionality, and performance optimization.",
     tech: ["Next", "TypeScript" , "TailwindCSS", "Swiper", "Formik & Yup" , "Axios" ],
     link: "https://fashique-chi.vercel.app/",
